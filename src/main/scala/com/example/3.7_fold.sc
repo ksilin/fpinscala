@@ -61,8 +61,8 @@ object List {
     case Cons(h, t) => Cons(h, append(t, other))
   }
 
-  def appendFold[A](as: List[A], other: List[A]): List[A] = foldLeft(as, other)((b, a) => Cons(b, a))
-//  def appendFold[A](as: List[A], other: List[A]): List[A] = foldRight(as, other)((a, b) => Cons(a, b))
+//  def appendFold[A](as: List[A], other: List[A]): List[A] = foldLeft(as, other)((b, a) => Cons(b, a))
+  def appendFold[A](as: List[A], other: List[A]): List[A] = foldRight(as, other)((a, b) => Cons(a, b))
 
   def concat[A](as: List[List[A]]): List[A] = {
     foldRight(as, Nil:List[A])(appendFold)
